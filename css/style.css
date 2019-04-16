@@ -1,0 +1,174 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body{
+  background: #91A8D0;
+  display: flex;
+  height: 500px;
+  margin: 0;
+}
+
+.square{
+  width: 100px;
+  height: 100px;
+  margin: 20% 10%;
+  background: #F7CAC9;
+  transform: rotate(45deg);
+  position:fixede;
+  perspective:200px;
+  transform:rotateY(0deg);
+  animation:rotate 5s infinite both;
+  transform-origin:60% 60%;
+}
+
+@keyframes rotate{
+  0%{
+    -webkit-transform:rotate(0deg);
+  }
+  25%{
+    -webkit-transform:rotate(90deg);
+  }
+  50%{
+    -webkit-transform:rotate(180deg);
+  }
+  75%{
+    -webkit-transform:rotate(270deg);
+  }
+  100%{
+    -webkit-transform:rotate(0deg);
+  }
+}
+.square:before,.square:after{
+  position:absolute;
+  content:'';
+  width:100px;
+  height:100px;
+  display:block;
+  border-radius:50%;
+  background:#F7CAC9;
+}
+
+.square:before{
+  left: -50px;
+  bottom: 0;
+}
+
+.square:after{
+  top:-50px;
+  bottom: 0;
+}
+
+
+
+
+
+
+
+.heart{
+  width: 100px;
+  height: 100px;
+  margin: 20% 30%;
+  background: #A6FFCC;
+  transform: rotate(45deg);
+  position: fixed;
+  transform:rotateZ(45deg);
+  transition: all 2s cubic-bezier(0.77, 0, 0.175, 1) 0.2s;
+  animation-name: heartmove;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.heart: hover{
+  transform: rotate(1660deg);
+  margin-top; 0px;
+}
+
+.heart:before,.heart:after{
+  position:absolute;
+  content:'';
+  width:100px;
+  height:100px;
+  display:block;
+  border-radius:50%;
+  background:#A6FFCC;
+}
+
+@keyframes heartmove{
+  0%{
+    top: 50px;
+    left: 50px;
+    transform: scale(0.1) rotate(0deg);
+  }
+  
+  70%{
+    transform: scale(2.25) rotate(-350deg);
+  }
+  100%{
+    top: 100px;
+    left: 500px;
+    transform: scale(0.25) rotate(45deg);
+  }
+}
+.heart:before{
+  left: -50px;
+  bottom: 0;
+}
+
+.heart:after{
+  top:-50px;
+  bottom: 0;
+}
+
+
+
+
+
+
+.test{
+  width: 50px;
+  height: 50px;
+  margin: 0% 0%;
+  background: #FFFF99;
+  position: fixed;
+  transition: all 2s transform 0.2s;
+  animation-name: testmove;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+.test: hover{
+  transform: rotate(0deg);
+  margin-top; 0px;
+}
+
+@keyframes testmove{
+  0%{
+    top: 50px;
+    left: 50px;
+  }
+  25%{
+    top: 400px;
+    left: 50px;
+    background:#FFB366;
+  }
+  50%{
+    top: 400px;
+    left: 800px;
+    background:#CCCCFF;	
+  }
+  75%{
+    top: 50px;
+    left: 800px;
+    background:#FAEBD7;
+    	
+  }
+  100%{
+    top: 50px;
+    left: 50px;
+  }
+}
